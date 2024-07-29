@@ -45,16 +45,3 @@ footer {
     width: 100%;
     bottom: 0;
 }
-
-button {
-    padding: 0.5rem 1rem;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    margin-top: 1rem;
-}
-
-button:hover {
-    background-color: #555;
-}
