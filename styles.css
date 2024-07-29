@@ -1,47 +1,116 @@
 /* styles.css */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: linear-gradient(to right, #1f1c2c, #928dab);
+    color: #f4f4f4;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    background: #111;
+    color: #f4f4f4;
     padding: 1rem;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 1rem;
 }
 
 nav ul li a {
-    color: #fff;
+    color: #f4f4f4;
     text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00d4ff;
 }
 
 main {
     padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 section {
     margin-bottom: 2rem;
 }
 
+section h2 {
+    border-bottom: 2px solid #00d4ff;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    color: #00d4ff;
+    text-transform: uppercase;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background: #00d4ff;
+    color: #111;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #00a3cc;
+}
+
 footer {
-    background-color: #333;
-    color: #fff;
+    background: #111;
+    color: #f4f4f4;
     text-align: center;
     padding: 1rem;
     position: fixed;
     width: 100%;
     bottom: 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+a {
+    color: #00d4ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+header, nav, main, footer {
+    animation: fadeIn 1s ease-in-out;
 }
