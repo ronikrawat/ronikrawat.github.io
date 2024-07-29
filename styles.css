@@ -114,3 +114,19 @@ a:hover {
 header, nav, main, footer {
     animation: fadeIn 1s ease-in-out;
 }
+.github-follow {
+    display: inline-flex;
+    align-items: center;
+    color: #f4f4f4;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.github-follow:hover {
+    color: #00d4ff;
+}
+
+.github-follow i {
+    margin-right: 0.5rem;
+}
