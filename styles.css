@@ -1,18 +1,36 @@
-/* styles.css */
+/* Global Styles */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #1f1c2c, #928dab);
-    color: #f4f4f4;
+    background: linear-gradient(135deg, #1e2a38, #2c3e50);
+    color: #f5f5f5;
+    overflow-x: hidden;
 }
 
+/* Header Styles */
 header {
-    background: #111;
-    color: #f4f4f4;
-    padding: 1rem;
+    background: rgba(50, 70, 80, 0.9);
+    color: #ffffff;
+    padding: 1rem 2rem;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    animation: fadeIn 1s ease-in-out;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    color: #fefa70; /* Bright Red */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+nav {
+    margin-top: 1rem;
 }
 
 nav ul {
@@ -21,75 +39,158 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    margin: 0 1rem;
+    margin: 0.5rem;
 }
 
 nav ul li a {
-    color: #f4f4f4;
+    color: #ecf0f1;
     text-decoration: none;
-    transition: color 0.3s;
+    font-size: 1.1rem;
+    transition: color 0.3s, transform 0.3s, background-color 0.3s;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    background: #2980b9; /* Blue */
 }
 
 nav ul li a:hover {
-    color: #00d4ff;
+    color: #ffffff;
+    background-color: #3498db; /* Lighter Blue */
+    transform: scale(1.1);
 }
 
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+}
+
+.menu-toggle-label {
+    display: none;
+    color: #e74c3c;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle-label {
+        display: block;
+        margin: 1rem auto;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: rgba(50, 70, 80, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .menu-toggle:checked ~ nav ul {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
+        padding: 1rem;
+        border-bottom: 1px solid #34495e;
+    }
+}
+
+/* Main Section Styles */
 main {
-    padding: 2rem;
+    padding: 4rem 2rem;
     max-width: 1200px;
-    margin: auto;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    margin: 6rem auto 2rem;
+    background: #34495e; /* Dark Blue Gray */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-in-out;
 }
 
 section {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 section h2 {
-    border-bottom: 2px solid #00d4ff;
+    border-bottom: 4px solid #e74c3c; /* Bright Red */
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
-    color: #00d4ff;
+    color: #e74c3c;
     text-transform: uppercase;
+    font-size: 2.2rem;
+    animation: slideIn 1s ease-out;
 }
 
+section p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+strong {
+    color: #f1c40f; /* Bright Yellow */
+    font-weight: bold;
+}
+
+/* Lists */
 ul {
     list-style: none;
     padding: 0;
 }
 
 ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
+/* Buttons */
 button {
-    padding: 0.5rem 1rem;
-    background: #00d4ff;
-    color: #111;
+    padding: 0.75rem 1.5rem;
+    background: #e74c3c; /* Bright Red */
+    color: #ffffff;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 button:hover {
-    background: #00a3cc;
+    background: #c0392b; /* Darker Red */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* Footer Styles */
 footer {
-    background: #111;
-    color: #f4f4f4;
+    background: rgba(50, 70, 80, 0.9);
+    color: #ffffff;
     text-align: center;
-    padding: 0.5rem;
-    position: fixed;
+    padding: 1.5rem;
+    position: relative;
     width: 100%;
-    bottom: 0;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out;
 }
 
 footer p {
@@ -99,22 +200,75 @@ footer p {
 .github-follow {
     display: inline-flex;
     align-items: center;
-    color: #f4f4f4;
+    color: #e74c3c; /* Bright Red */
     text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s;
+    font-size: 1.2rem;
+    transition: color 0.3s, transform 0.3s;
     margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background: rgba(52, 73, 94, 0.8);
 }
 
 .github-follow:hover {
-    color: #00d4ff;
+    color: #c0392b; /* Darker Red */
+    background: rgba(44, 62, 80, 0.9);
+    transform: scale(1.05);
 }
 
 .github-follow i {
     margin-right: 0.5rem;
 }
 
-/* Animations */
+/* Responsive Design */
+@media (max-width: 992px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    main {
+        padding: 2rem 1rem;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        padding: 1.5rem;
+    }
+
+    section h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li a {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    section h2 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Keyframe Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -124,6 +278,34 @@ footer p {
     }
 }
 
-header, nav, main, footer {
-    animation: fadeIn 1s ease-in-out;
+@keyframes slideIn {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+a {
+    color: lightgreen;
+    text-decoration: none; /* Optional: removes underline */
+    transition: color 0.3s ease; /* Optional: smooth transition for color change */
+}
+
+/* Hover state */
+a:hover {
+    color: rgb(216, 90, 36); /* Change to the color you prefer on hover */
 }
