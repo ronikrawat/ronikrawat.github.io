@@ -1,11 +1,12 @@
-// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('#nav-menu');
 
-// Function to display the current year in the footer
-function displayYear() {
-    const footerYear = document.getElementById('year');
-    const currentYear = new Date().getFullYear();
-    footerYear.textContent = currentYear;
-}
-
-// Call displayYear on page load
-window.onload = displayYear;
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    } else {
+        console.error('Menu toggle or navigation menu not found.');
+    }
+});
