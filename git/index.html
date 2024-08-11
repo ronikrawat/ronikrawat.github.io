@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Commands Tutorial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>GitHub Commands Tutorial</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">GitHub Commands</a></li>
+                <li><a href="git_interview.html">Interview Questions</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="init" class="content-section">
+            <h2 class="toggle-header">Initialize a Repository</h2>
+            <div class="content">
+                <p><strong>Command:</strong> <code>git init</code></p>
+                <p><strong>Description:</strong> Initializes a new Git repository.</p>
+                <p><strong>Example:</strong></p>
+                <pre><code>mkdir my-project
+cd my-project
+git init</code></pre>
+            </div>
+        </section>
+
+        <section id="commit" class="content-section">
+            <h2 class="toggle-header">Committing Changes</h2>
+            <div class="content">
+                <p><strong>Command:</strong> <code>git commit -m "message"</code></p>
+                <p><strong>Description:</strong> Commits the staged changes with a descriptive message.</p>
+                <p><strong>Example:</strong></p>
+                <pre><code>git add .
+git commit -m "Initial commit"</code></pre>
+            </div>
+        </section>
+
+        <section id="branch" class="content-section">
+            <h2 class="toggle-header">Branching</h2>
+            <div class="content">
+                <p><strong>Command:</strong> <code>git branch</code></p>
+                <p><strong>Description:</strong> Lists all branches in the repository.</p>
+                <p><strong>Example:</strong></p>
+                <pre><code>git branch</code></pre>
+
+                <p><strong>Command:</strong> <code>git branch branch_name</code></p>
+                <p><strong>Description:</strong> Creates a new branch.</p>
+                <p><strong>Example:</strong></p>
+                <pre><code>git branch feature-x</code></pre>
+            </div>
+        </section>
+
+        <section id="merge" class="content-section">
+            <h2 class="toggle-header">Merging</h2>
+            <div class="content">
+                <p><strong>Command:</strong> <code>git merge branch_name</code></p>
+                <p><strong>Description:</strong> Merges the specified branch into the current branch.</p>
+                <p><strong>Example:</strong></p>
+                <pre><code>git merge feature-x</code></pre>
+            </div>
+        </section>
+
+        <section id="remote" class="content-section">
+            <h2 class="toggle-header">Working with Remote Repositories</h2>
+            <div class="content">
+                <p><strong>Command:</strong> <code>git remote add remote_name URL</code></p>
+                <p><strong>Description:</strong> Adds a new remote repository.</p>
+                <p><strong>Example:</strong></p>
+                <pre><code>git remote add origin https://github.com/username/repository.git</code></pre>
+
+                <p><strong>Command:</strong> <code>git remote -v</code></p>
+                <p><strong>Description:</strong> Displays the URLs of remote repositories.</p>
+                <p><strong>Example:</strong></p>
+                <pre><code>git remote -v</code></pre>
+            </div>
+        </section>
+
+        <section id="clone" class="content-section">
+            <h2 class="toggle-header">Cloning Repositories</h2>
+            <div class="content">
+                <p><strong>Command:</strong> <code>git clone URL</code></p>
+                <p><strong>Description:</strong> Creates a local copy of a remote repository.</p>
+                <p><strong>Example:</strong></p>
+                <pre><code>git clone https://github.com/username/repository.git</code></pre>
+            </div>
+        </section>
+
+        <section id="pull" class="content-section">
+            <h2 class="toggle-header">Pulling Changes</h2>
+            <div class="content">
+                <p><strong>Command:</strong> <code>git pull</code></p>
+                <p><strong>Description:</strong> Fetches and merges changes from the remote repository to your local branch.</p>
+                <p><strong>Example:</strong></p>
+                <pre><code>git pull origin main</code></pre>
+            </div>
+        </section>
+
+        <section id="push" class="content-section">
+            <h2 class="toggle-header">Pushing Changes</h2>
+            <div class="content">
+                <p><strong>Command:</strong> <code>git push</code></p>
+                <p><strong>Description:</strong> Pushes your local commits to the remote repository.</p>
+                <p><strong>Example:</strong></p>
+                <pre><code>git push origin main</code></pre>
+            </div>
+        </section>
+
+        <section id="force-push" class="content-section">
+            <h2 class="toggle-header">Force Pushing Changes</h2>
+            <div class="content">
+                <p><strong>Command:</strong> <code>git push --force</code></p>
+                <p><strong>Description:</strong> <mark>Forcefully pushes changes to the remote repository, overwriting any conflicting changes.</mark></p>
+                <p><strong>Example:</strong></p>
+                <pre><code>git push --force origin main</code></pre>
+
+                <h3>Force Pushing with Lease</h3>
+                <p><strong>Command:</strong> <code>git push --force-with-lease</code></p>
+                <p><strong>Description:</strong> <mark>A safer alternative to <code>git push --force</code> that only forces the push if the remote branch hasn't been updated.</mark></p>
+                <p><strong>Example:</strong></p>
+                <pre><code>git push --force-with-lease origin main</code></pre>
+            </div>
+        </section>
+
+        <section id="remove" class="content-section">
+            <h2 class="toggle-header">Removing Files, Branches, and Remotes</h2>
+            <div class="content">
+                <h3>Removing Files</h3>
+                <p><strong>Command:</strong> <code>git rm filename</code></p>
+                <p><strong>Description:</strong> Removes a file from the working directory and stages the removal.</p>
+                <p><strong>Example:</strong></p>
+                <pre><code>git rm myfile.txt
+git commit -m "Removed myfile.txt"</code></pre>
+
+                <h3>Removing Cached Files</h3>
+                <p><strong>Command:</strong> <code>git rm --cached filename</code></p>
+                <p><strong>Description:</strong> <mark>Removes a file from the staging area but keeps it in the working directory.</mark></p>
+                <p><strong>Example:</strong></p>
+                <pre><code>git rm --cached myfile.txt
+git commit -m "Removed myfile.txt from staging but kept it locally"</code></pre>
+
+                <h3>Removing Branches</h3>
+                <p><strong>Command:</strong> <code>git branch -d branch_name</code></p>
+                <p><strong>Description:</strong> Deletes a local branch that has been merged.</p>
+                <p><strong>Example:</strong></p>
+                <pre><code>git branch -d feature-x</code></pre>
+
+                <p><strong>Command:</strong> <code>git branch -D branch_name</code></p>
+                <p><strong>Description:</strong> <mark>Forces the deletion of a local branch, even if it hasn't been merged.</mark></p>
+                <p><strong>Example:</strong></p>
+                <pre><code>git branch -D feature-x</code></pre>
+
+                <h3>Removing Remote Branches</h3>
+                <p><strong>Command:</strong> <code>git push remote_name --delete branch_name</code></p>
+                <p><strong>Description:</strong> Deletes a branch from the remote repository.</p>
+                <p><strong>Example:</strong></p>
+                <pre><code>git push origin --delete feature-x</code></pre>
+
+                <h3>Removing Remote Repositories</h3>
+                <p><strong>Command:</strong> <code>git remote rm remote_name</code></p>
+                <p><strong>Description:</strong> Removes a remote repository reference from your local repository.</p>
+                <p><strong>Example:</strong></p>
+                <pre><code>git remote rm origin</code></pre>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Kishore Rawat. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

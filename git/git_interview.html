@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Interview Questions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>GitHub Interview Questions</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">GitHub Commands</a></li>
+                <li><a href="git_interview.html">Interview Questions</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="general-questions" class="content-section">
+            <h2 class="toggle-header">General GitHub Questions</h2>
+            <div class="content">
+                <ul>
+                    <li><strong>Q: What is GitHub, and why is it used?</strong></li>
+                    <li><span>A:</span> GitHub is a web-based platform for version control and collaboration, allowing multiple developers to work on projects together. It hosts Git repositories and provides additional features like pull requests, issues, and project management tools.</li>
+
+                    <li><strong>Q: Explain the difference between Git and GitHub.</strong></li>
+                    <li><span>A:</span> Git is a version control system used to track changes in source code during software development. GitHub is a cloud-based platform that hosts Git repositories and provides tools for collaboration, such as issue tracking, code reviews, and more.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="commands-questions" class="content-section">
+            <h2 class="toggle-header">GitHub Commands Questions</h2>
+            <div class="content">
+                <ul>
+                    <li><strong>Q: How do you initialize a new Git repository?</strong></li>
+                    <li><span>A:</span> By using the <code>git init</code> command, which creates a new Git repository in the current directory.</li>
+
+                    <li><strong>Q: How can you undo a commit in Git?</strong></li>
+                    <li><span>A:</span> You can use <code>git revert commit_id</code> to create a new commit that undoes the changes from a previous commit, or <code>git reset --soft commit_id</code> to move the HEAD pointer to a previous commit without modifying the working directory.</li>
+
+                    <li><strong>Q: What is the difference between <code>git merge</code> and <code>git rebase</code>?</strong></li>
+                    <li><span>A:</span> <code>git merge</code> combines the changes from two branches into one, creating a new merge commit. <code>git rebase</code> moves or combines a sequence of commits to a new base commit, resulting in a linear history.</li>
+
+                    <li><strong>Q: How do you remove a file from Git without deleting it from your local file system?</strong></li>
+                    <li><span>A:</span> You can use <code>git rm --cached filename</code> to remove the file from the Git index, so it won't be tracked, but it remains in your local file system.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="collaboration-questions" class="content-section">
+            <h2 class="toggle-header">Collaboration and Workflow Questions</h2>
+            <div class="content">
+                <ul>
+                    <li><strong>Q: What is a pull request, and how does it work?</strong></li>
+                    <li><span>A:</span> A pull request is a feature in GitHub that allows developers to notify team members that they have completed a feature or bug fix and request it to be reviewed and merged into the main codebase. It helps in code reviews and discussion before the changes are merged.</li>
+
+                    <li><strong>Q: How can you resolve a merge conflict in Git?</strong></li>
+                    <li><span>A:</span> A merge conflict occurs when Git cannot automatically merge changes. To resolve it, open the conflicting file, manually edit the content to resolve the conflict, stage the changes using <code>git add</code>, and then commit the merge.</li>
+
+                    <li><strong>Q: What is the significance of forking a repository on GitHub?</strong></li>
+                    <li><span>A:</span> Forking a repository creates a personal copy of someone else's repository. It allows you to freely experiment with changes without affecting the original project. Once changes are made, you can submit a pull request to propose merging your changes into the original repository.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="advanced-questions" class="content-section">
+            <h2 class="toggle-header">Advanced GitHub Questions</h2>
+            <div class="content">
+                <ul>
+                    <li><strong>Q: Explain the concept of Git stash and when you would use it.</strong></li>
+                    <li><span>A:</span> Git stash temporarily saves changes in your working directory that are not yet ready to be committed, allowing you to switch branches or perform other operations without losing your changes. You can later apply the stashed changes to any branch using <code>git stash apply</code>.</li>
+
+                    <li><strong>Q: How do you force push to a remote repository, and when is it appropriate?</strong></li>
+                    <li><span>A:</span> Use <code>git push --force</code> to forcefully push changes to a remote repository, which can overwrite commits. This is appropriate when you need to rewrite the commit history, but it should be used cautiously to avoid overwriting others' work.</li>
+
+                    <li><strong>Q: What is GitHub Actions, and how does it work?</strong></li>
+                    <li><span>A:</span> GitHub Actions is a CI/CD platform that allows you to automate tasks like testing, building, and deploying your code directly from GitHub repositories. You define workflows in YAML files, which are triggered by GitHub events such as pushes or pull requests.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Kishore Rawat. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+/* Section Header Styles */
+h2, h3 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
+}
+
+h2:hover, h3:hover {
+    background-color: #444;
+}
+
+/* Content Styles */
+.content {
+    display: none;
+    padding: 15px;
+}
+
+.content pre, .content ul {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-left: 5px solid #333;
+    margin: 10px 0;
+}
+
+.content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.content ul li {
+    margin-bottom: 10px;
+}
+
+/* Enhanced Question Styling */
+.content ul li strong {
+    font-weight: bold;
+    color: #333;
+    display: block; /* Ensures the question is on its own line */
+    margin-bottom: 5px; /* Adds spacing below the question */
+}
+
+/* Ensure answers are styled normally */
+.content ul li span {
+    display: block;
+    margin-bottom: 10px; /* Adds spacing below the answer */
+    color: #666;
+}
+
+/* Additional Styling for Questions */
+code {
+    background-color: #eee;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: Consolas, "Courier New", monospace;
+}
+
+mark {
+    background-color: #ff0;
+    font-weight: bold;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
