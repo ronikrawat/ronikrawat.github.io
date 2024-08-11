@@ -1,9 +1,12 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    background: radial-gradient(circle, #f0f0f0, #d1d1d1, #a6a6a6);
+    color: #fff;
+    line-height: 1.7;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    overflow-x: hidden;
 }
 
 header {
@@ -152,3 +155,13 @@ footer p {
     margin: 0;
 }
 
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.8rem;
+    }
+  
+    .button {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+    }
+  }
