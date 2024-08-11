@@ -13,9 +13,36 @@ header {
     text-align: center;
 }
 
-h1 {
-    margin: 0;
-}
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    position: relative;
+    background: linear-gradient(90deg, #3498db, #9b59b6, #e74c3c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: hue-rotate 3s infinite linear, text-glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes hue-rotate {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+  
+  @keyframes text-glow {
+    0% {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+    100% {
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6);
+    }
+  }
 
 nav ul {
     list-style-type: none;
