@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kishore Rawat - Resume PDF</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+/* Keep your resume styles exactly as before */
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f4f6f8; margin:0; }
+.resume-wrapper { max-width:900px; margin:40px auto; background:#fff; box-shadow:0 6px 18px rgba(0,0,0,0.12); border-radius:12px; overflow:hidden; padding:0; }
+.header { background:#0b57a4; color:#fff; padding:35px 30px; }
+.header h1 { margin:0; font-size:32px; font-weight:700; letter-spacing:1px; }
+.header p { margin:5px 0; font-size:14px; }
+.header a { color:#fff; text-decoration:none; }
+.content { display:grid; grid-template-columns:30% 70%; gap:30px; padding:30px; }
+h2 { font-size:18px; margin:20px 0 10px; color:#0b57a4; border-bottom:2px solid #0b57a4; padding-bottom:4px; font-weight:700; }
+.job-title { font-size:15px; font-weight:600; margin-top:12px; color:#111; }
+.job-duration { font-size:13px; font-style:italic; margin-bottom:8px; color:#444; }
+ul { padding-left:18px; margin:8px 0; }
+ul li { margin-bottom:6px; line-height:1.5; font-size:14px; }
+.left-col ul li { font-size:13.5px; }
+@media screen and (max-width:768px){.content{grid-template-columns:1fr;}}
+button { margin:20px; padding:10px 20px; font-size:16px; cursor:pointer; }
+</style>
+</head>
+<body>
+
+<div class="resume-wrapper" id="resume">
+    <!-- Paste your full resume HTML content here -->
+    <!-- HEADER -->
+    <div class="header">
+        <h1>KISHORE RAWAT</h1>
+        <p>Test Automation Engineer | 5.5 Years Experience</p>
+        <p>📞 8505802881 | 📧 <a href="mailto:Kishore.rawat17@gmail.com">Kishore.rawat17@gmail.com</a></p>
+        <p>📍 725, Sector 31, Faridabad</p>
+    </div>
+    <!-- CONTENT -->
+    <div class="content">
+        <div class="left-col">
+            <h2>Technical Skills</h2>
+            <ul>
+                <li>Python, SQL, HTML</li>
+                <li>Selenium, Appium, Pytest</li>
+                <li>Robot Framework</li>
+                <li>Postman (API Testing)</li>
+                <li>Git, GitHub</li>
+                <li>Jenkins, GitHub Actions</li>
+                <li>Jira</li>
+                <li>PyCharm, VS Code</li>
+            </ul>
+            <h2>Interpersonal Skills</h2>
+            <ul>
+                <li>Customer Interaction</li>
+                <li>Problem-solving</li>
+                <li>Quick Learner</li>
+                <li>Team Collaboration</li>
+                <li>Time Management</li>
+            </ul>
+        </div>
+        <div class="right-col">
+            <h2>Professional Summary</h2>
+            <p>Test Automation Engineer with 5.5 years of experience in automation testing (Web + Mobile) using Python, Selenium, Appium, Pytest, and Robot Framework. Strong experience in framework design, CI/CD pipelines, API testing, and Agile processes. Hands-on in version branching strategy (Master → Release), customer interaction, and ensuring stable application delivery.</p>
+
+            <h2>Professional Experience</h2>
+            <div class="job-title">Test Automation Engineer | Test Yantra Software Solutions Pvt Ltd, Bengaluru</div>
+            <div class="job-duration">September 2024 – Present</div>
+            <ul>
+                <li>Automated web & mobile apps using Python, Selenium, Appium, and Pytest.</li>
+                <li>Maintained test cases in <b>Master branch</b>; created <b>Release branches</b> for stable builds.</li>
+                <li>Performed Smoke, Sanity & Regression testing for every deployment cycle.</li>
+                <li>Triggered & monitored Jenkins pipelines; analyzed failure logs for RCA.</li>
+                <li>Raised detailed defect tickets and tracked closure with dev teams.</li>
+                <li>Interacted directly with customers for clarifications, demos & status updates.</li>
+                <li>Improved automation framework reusability and stability.</li>
+            </ul>
+            <div class="job-title">Test Automation Engineer | Octoban Technology. Pvt Ltd, Bengaluru</div>
+            <div class="job-duration">May 2020 – June 2024</div>
+            <ul>
+                <li>Automated mobile & web applications using Selenium, Appium & Python.</li>
+                <li>Built scalable Pytest + POM framework reducing maintenance time.</li>
+                <li>Performed API testing with Postman ensuring full endpoint coverage.</li>
+                <li>Participated in Agile planning, sprint discussions & daily stand-ups.</li>
+            </ul>
+
+            <h2>Projects</h2>
+            <div class="job-title">Lexir – Supply Chain Management System</div>
+            <ul>
+                <li>Automated supply chain workflows (orders, logistics, inventory) for Web + Mobile.</li>
+                <li>Developed Selenium & Appium scripts for core modules.</li>
+                <li>Worked with developers to resolve critical defects before release.</li>
+            </ul>
+            <div class="job-title">Healthwheel – Hospital Management Application</div>
+            <ul>
+                <li>Automated healthcare modules on both web & mobile platforms.</li>
+                <li>Improved test coverage through integration & regression cycles.</li>
+            </ul>
+            <div class="job-title">Emplycy – Job Portal</div>
+            <ul>
+                <li>Created automation scripts for job posting & profile flows.</li>
+                <li>Automated mobile UI flows and logged defects using Jira.</li>
+            </ul>
+
+            <h2>Education</h2>
+            <p>B.Tech in Computer Science – LPU, Phagwara, Punjab</p>
+        </div>
+    </div>
+</div>
+
+<button onclick="generatePDF()">Download PDF</button>
+
+<script>
+async function generatePDF() {
+    const { jsPDF } = window.jspdf;
+    const resume = document.getElementById('resume');
+    const canvas = await html2canvas(resume, { scale: 2 });
+    const imgData = canvas.toDataURL('image/png');
+    const pdf = new jsPDF('p', 'pt', 'a4');
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+    pdf.save('Kishore_Rawat_Resume.pdf');
+}
+</script>
+
+</body>
+</html>
