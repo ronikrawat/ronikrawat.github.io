@@ -5,16 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>4-Week Fertility Wellness Plan</title>
 <style>
-body{font-family:Arial,sans-serif;margin:0;background:#f4f7fb;color:#333}
-header{background:linear-gradient(135deg,#6c63ff,#4caf50);color:#fff;padding:20px;text-align:center}
-.container{max-width:900px;margin:auto;padding:12px}
-.card{background:#fff;border-radius:12px;padding:15px;margin:12px 0;box-shadow:0 2px 8px rgba(0,0,0,.1)}
-details{margin:10px 0;background:#fff;border-radius:10px;padding:10px}
-summary{font-weight:bold;cursor:pointer}
-table{width:100%;border-collapse:collapse}
-th,td{border:1px solid #ddd;padding:8px;vertical-align:top}
-th{background:#6c63ff;color:#fff}
-.check{display:block;margin:6px 0}
+/* NEW: Ensures padding doesn't cause elements to break their width limits */
+* { box-sizing: border-box; }
+
+body { font-family: Arial, sans-serif; margin: 0; background: #f4f7fb; color: #333; }
+header { background: linear-gradient(135deg, #6c63ff, #4caf50); color: #fff; padding: 20px; text-align: center; }
+.container { max-width: 900px; margin: auto; padding: 12px; }
+
+/* NEW: Added overflow-x to protect the Tracking Sheet table at the bottom */
+.card { background: #fff; border-radius: 12px; padding: 15px; margin: 12px 0; box-shadow: 0 2px 8px rgba(0,0,0,.1); overflow-x: auto; }
+
+/* NEW: Added overflow-x so expanded tables scroll neatly inside their white cards */
+details { margin: 10px 0; background: #fff; border-radius: 10px; padding: 10px; overflow-x: auto; }
+summary { font-weight: bold; cursor: pointer; }
+
+/* NEW: Added min-width so the text stays readable and triggers the scroll on small screens */
+table { width: 100%; border-collapse: collapse; min-width: 650px; }
+th, td { border: 1px solid #ddd; padding: 8px; vertical-align: top; }
+th { background: #6c63ff; color: #fff; }
+.check { display: block; margin: 6px 0; }
 </style>
 </head>
 <body>
